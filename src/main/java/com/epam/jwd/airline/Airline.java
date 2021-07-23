@@ -6,7 +6,6 @@ import com.epam.jwd.plane.Aircraft;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class Airline {
 
@@ -17,6 +16,10 @@ public class Airline {
         this.boardList = new ArrayList<>();
     }
 
+    public List<Aircraft> getBoardList() {
+        return boardList;
+    }
+
     public void addStandardAircraftBase(AircraftFactory factory){
 
         addPassengerAircraft(factory);
@@ -25,7 +28,7 @@ public class Airline {
 
     }
 
-    public void addPassengerAircraft(AircraftFactory factory){
+    private void addPassengerAircraft(AircraftFactory factory){
 
         for(int i = 0; i < 7; i++){
             boardList.add(factory.createMiddleHaulPassengerAircraft());
@@ -50,7 +53,7 @@ public class Airline {
         boardList.add(factory.createRescueAircraft());
     }
 
-    public void showAirlineBoards(){
+    public void getAirlineBoards(){
 
         for(Aircraft aircraft : boardList){
             System.out.println(aircraft.getModelName());

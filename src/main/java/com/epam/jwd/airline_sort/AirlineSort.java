@@ -8,12 +8,14 @@ import java.util.List;
 
 public class AirlineSort {
 
-    public static void sortByFlightRange(List<Aircraft> list){
+    public static List<Aircraft> sortByFlightRange(List<Aircraft> list){
 
         Comparator<Aircraft> comparator =
                 (Aircraft aircraft1, Aircraft aircraft2) ->
                         aircraft1.getRangeOfFlightInKilometers() - aircraft2.getRangeOfFlightInKilometers();
 
         Collections.sort(list, comparator);
+
+        return list;
     }
 }
