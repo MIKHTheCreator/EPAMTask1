@@ -17,19 +17,35 @@ public class Airline {
 
     public void addStandardAircraftBase(AircraftFactory factory){
 
-        for(int i = 0; i < 11; i++){
-            boardList.add(factory.createPassengerAircraft());
+        addPassengerAircraft(factory);
+        addCargoAircraft(factory);
+        addDedicatedAircraft(factory);
+
+    }
+
+    public void addPassengerAircraft(AircraftFactory factory){
+
+        for(int i = 0; i < 7; i++){
+            boardList.add(factory.createMiddleHaulPassengerAircraft());
+            boardList.add(factory.createShortHaulPassengerAircraft());
         }
 
-        addCargoAircraft(factory);
-        boardList.add(factory.createDedicatedAircraft());
-        boardList.add(factory.createTrainingAircraft());
+        for(int i = 0; i < 12; i++){
+            boardList.add(factory.createLongHaulPassengerAircraft());
+        }
     }
 
     private void addCargoAircraft(AircraftFactory factory){
-        for(int i = 0; i < 4; i++){
-            boardList.add(factory.createCargoAircraft());
+
+        for(int i = 0; i < 2; i++){
+            boardList.add(factory.createMiddleHaulCargoAircraft());
+            boardList.add(factory.createLongHaulCargoAircraft());
         }
+    }
+
+    private void addDedicatedAircraft(AircraftFactory factory){
+        boardList.add(factory.createIntelligenceAircraft());
+        boardList.add(factory.createRescueAircraft());
     }
 
     public void showAirlineBoards(){
