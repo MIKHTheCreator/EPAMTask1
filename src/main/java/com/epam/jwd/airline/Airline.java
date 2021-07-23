@@ -55,5 +55,10 @@ public class Airline {
         }
     }
 
+    public int getBoardListSize(){
+
+        return this.boardList.size();
+    }
+
 
 }
