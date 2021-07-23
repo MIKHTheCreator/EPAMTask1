@@ -60,5 +60,25 @@ public class Airline {
         return this.boardList.size();
     }
 
+    public int getTotalAirlineCapacity(){
 
+        int totalNumOfSeats = 0;
+
+        for(Aircraft aircraft : boardList){
+            totalNumOfSeats += aircraft.getAircraftCapacity();
+        }
+
+        return totalNumOfSeats;
+    }
+
+    public int getTotalAirlineLiftingCapacity(){
+
+        int totalLiftingCapacityInKilograms = 0;
+
+        for(Aircraft aircraft : boardList){
+            totalLiftingCapacityInKilograms += aircraft.getLiftingCapacityInKilograms();
+        }
+
+        return totalLiftingCapacityInKilograms;
+    }
 }
