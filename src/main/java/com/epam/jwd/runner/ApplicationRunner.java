@@ -12,6 +12,10 @@ import java.util.regex.Pattern;
 
 public class ApplicationRunner {
 
+
+    /*
+    * Add validation and fix some view issues
+    * */
     public static void main(String[] args) {
 
         try(Scanner scan = new Scanner(System.in)){
