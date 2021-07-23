@@ -1,6 +1,6 @@
 package com.epam.jwd.airline;
 
-import com.epam.jwd.factory.AirlineFactory;
+import com.epam.jwd.factory.AircraftFactory;
 import com.epam.jwd.plane.Aircraft;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class Airline {
         this.boardList = new ArrayList<>();
     }
 
-    public void addStandardAircraftBase(AirlineFactory factory){
+    public void addStandardAircraftBase(AircraftFactory factory){
 
         for(int i = 0; i < 11; i++){
             boardList.add(factory.createPassengerAircraft());
@@ -26,7 +26,7 @@ public class Airline {
         boardList.add(factory.createTrainingAircraft());
     }
 
-    private void addCargoAircraft(AirlineFactory factory){
+    private void addCargoAircraft(AircraftFactory factory){
         for(int i = 0; i < 4; i++){
             boardList.add(factory.createCargoAircraft());
         }
