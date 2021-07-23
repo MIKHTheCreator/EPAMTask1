@@ -5,6 +5,8 @@ import com.epam.jwd.plane.Aircraft;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Airline {
 
@@ -80,5 +82,14 @@ public class Airline {
         }
 
         return totalLiftingCapacityInKilograms;
+    }
+
+    public Aircraft findByParameters(float minFuelConsumption, float maxFuelConsumption){
+
+        Optional<Aircraft> firstSuitableAircraft =  boardList.stream()
+                .filter(aircraft -> (aircraft.getFuelConsumption() >= minFuelConsumption
+                && aircraft.getFuelConsumption() <= maxFuelConsumption)).findFirst();
+
+        return firstSuitableAircraft.get();
     }
 }
