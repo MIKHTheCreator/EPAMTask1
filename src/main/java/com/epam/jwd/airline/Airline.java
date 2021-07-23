@@ -3,7 +3,6 @@ package com.epam.jwd.airline;
 import com.epam.jwd.factory.AirlineFactory;
 import com.epam.jwd.plane.Aircraft;
 
-import java.awt.event.HierarchyBoundsAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
