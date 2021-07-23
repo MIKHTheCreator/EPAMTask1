@@ -18,15 +18,15 @@ public class ApplicationRunner {
 
             System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines)");
 
-            String inputString = scan.nextLine();
+            String parsedString = scan.nextLine();
 
-            Pattern pattern = Pattern.compile("(?i)(\\W|^)(cisairlines|natoairlines)(\\W|$)");
-            Matcher matcher = pattern.matcher(inputString);
+            //Pattern pattern = Pattern.compile("(?i)(cisairlines|natoairlines)$");
+            //Matcher matcher = pattern.matcher(inputString);
 
-            String parsedString = matcher.group();
+            //String parsedString = matcher.group();
 
             if(parsedString.equalsIgnoreCase("CISAirlines")){
-                System.out.println("You have chosen>> " + parsedString);
+                System.out.println("=======" + parsedString + "=======");
 
                 AircraftFactory factory = new CISAircraftFactory();
 
