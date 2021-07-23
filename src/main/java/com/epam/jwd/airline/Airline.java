@@ -15,8 +15,6 @@ public class Airline {
         this.boardList = new ArrayList<>();
     }
 
-
-    /*FIX*/
     public void addStandardAircraftBase(AirlineFactory factory){
 
         for(int i = 0; i < 11; i++){
