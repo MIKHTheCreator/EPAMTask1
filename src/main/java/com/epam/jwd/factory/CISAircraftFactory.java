@@ -18,7 +18,8 @@ public class CISAircraftFactory implements AircraftFactory {
 
     @Override
     public Aircraft createTrainingAircraft() {
-        return new TrainingAircraft("Hawker Siddeley Hawk", 920, 2520);
+        return new TrainingAircraft("Hawker Siddeley Hawk",
+                920, 2520);
     }
 
     @Override
@@ -28,25 +29,25 @@ public class CISAircraftFactory implements AircraftFactory {
     }
 
     @Override
-    public Aircraft createMiddleHaulPassengerAircraft(){
+    public Aircraft createMiddleHaulPassengerAircraft() {
         return new PassengerAircraft("Boeing 737-800", 225,
                 4900, 3657, 4500);
     }
 
     @Override
-    public Aircraft createShortHaulPassengerAircraft(){
+    public Aircraft createShortHaulPassengerAircraft() {
         return new PassengerAircraft("Sukhoi SuperJet 100", 120, 1200,
                 1240, 2400);
     }
 
     @Override
-    public Aircraft createMiddleHaulCargoAircraft(){
+    public Aircraft createMiddleHaulCargoAircraft() {
         return new CargoAircraft("Аn-24", 9000,
                 2470, 5700);
     }
 
     @Override
-    public Aircraft createRescueAircraft(){
+    public Aircraft createRescueAircraft() {
         return new DedicatedAircraft("Be-200", 12370,
                 5600, 10500);
     }

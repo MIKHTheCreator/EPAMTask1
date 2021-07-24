@@ -2,67 +2,48 @@ package com.epam.jwd.runner;
 
 import com.epam.jwd.airline.Airline;
 import com.epam.jwd.airline_sort.AirlineSort;
-import com.epam.jwd.factory.AircraftFactory;
-import com.epam.jwd.factory.CISAircraftFactory;
-import com.epam.jwd.factory.NATOAircraftFactory;
+import com.epam.jwd.validation.InputStringValidation;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ApplicationRunner {
 
-
-    /*
-    * Add validation and fix some view issues
-    * */
     public static void main(String[] args) {
 
-        try(Scanner scan = new Scanner(System.in)){
 
-            System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines)");
+        try (Scanner scan = new Scanner(System.in)) {
 
-            String parsedString = scan.nextLine();
+            System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines),"
+                    + " write it below(Enter exit to exit):");
 
-            //Pattern pattern = Pattern.compile("(?i)(cisairlines|natoairlines)$");
-            //Matcher matcher = pattern.matcher(inputString);
+            String parsedString = InputStringValidation.validateAirlineInput(scan);
+            Airline airline = new Airline();
+            InputStringValidation.checkStringForMatch(airline, parsedString);
+            displayAirlineInfo(airline);
 
-            //String parsedString = matcher.group();
+            System.out.println("\nEnter fuel consumption parameters(min and max) to find suitable aircraft: ");
 
-            if(parsedString.equalsIgnoreCase("CISAirlines")){
-                System.out.println("=======" + parsedString + "=======");
+            InputStringValidation.validateFuelParameters(scan, airline);
 
-                AircraftFactory factory = new CISAircraftFactory();
+        } catch (NoSuchElementException exception) {
+            System.err.println("There is no aircraft with such fuel consumption parameters!");
 
-                Airline airline = new Airline();
-                airline.addStandardAircraftBase(factory);
-
-                displayAirlineInfo(airline);
-            } else if(parsedString.equalsIgnoreCase("NatoAirlines")){
-                System.out.println("You have chosen>> " + parsedString);
-
-                AircraftFactory factory = new NATOAircraftFactory();
-
-                Airline airline = new Airline();
-                airline.addStandardAircraftBase(factory);
-
-                displayAirlineInfo(airline);
-            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
-
     }
 
-    private static void displayAirlineInfo(Airline airline){
+    private static void displayAirlineInfo(Airline airline) {
 
         System.out.println("Airline Fleet: " + airline.getBoardListSize()
-                        + "\nTotal Airline Capacity: " + airline.getTotalAirlineCapacity()
-                        + "\nTotal Airline Lifting Capacity: " + airline.getTotalAirlineLiftingCapacity()
-                        + "\nAll Available Fleet: ");
+                + "\nTotal Airline Capacity: " + airline.getTotalAirlineCapacity()
+                + "\nTotal Airline Lifting Capacity: " + airline.getTotalAirlineLiftingCapacity()
+                + "\n\nAll Available Fleet: ");
         getSortedAirlineBoards(airline);
-
     }
 
-    private static void getSortedAirlineBoards(Airline airline){
+    private static void getSortedAirlineBoards(Airline airline) {
 
         AirlineSort.sortByFlightRange(airline.getBoardList());
 
