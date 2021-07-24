@@ -2,9 +2,6 @@ package com.epam.jwd.runner;
 
 import com.epam.jwd.airline.Airline;
 import com.epam.jwd.airline_sort.AirlineSort;
-import com.epam.jwd.factory.AircraftFactory;
-import com.epam.jwd.factory.CISAircraftFactory;
-import com.epam.jwd.factory.NATOAircraftFactory;
 import com.epam.jwd.validation.InputStringValidation;
 
 import java.util.Scanner;
