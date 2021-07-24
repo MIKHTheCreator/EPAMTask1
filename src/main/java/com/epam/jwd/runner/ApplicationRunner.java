@@ -6,31 +6,45 @@ import com.epam.jwd.factory.AircraftFactory;
 import com.epam.jwd.factory.CISAircraftFactory;
 import com.epam.jwd.factory.NATOAircraftFactory;
 
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ApplicationRunner {
 
-
     /*
-    * Add validation and fix some view issues
-    * */
+     * Add validation and fix some view issues
+     * */
     public static void main(String[] args) {
 
-        try(Scanner scan = new Scanner(System.in)){
 
-            System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines)");
+        try (Scanner scan = new Scanner(System.in)) {
 
-            String parsedString = scan.nextLine();
+            System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines), write it below:");
 
-            //Pattern pattern = Pattern.compile("(?i)(cisairlines|natoairlines)$");
-            //Matcher matcher = pattern.matcher(inputString);
+            String inputString;
+            String parsedString = "";
 
-            //String parsedString = matcher.group();
+            while(true){
 
-            if(parsedString.equalsIgnoreCase("CISAirlines")){
-                System.out.println("=======" + parsedString + "=======");
+                inputString = scan.nextLine();
+
+                Pattern pattern = Pattern.compile("(cisairline|natoairline)s*", Pattern.CASE_INSENSITIVE);
+                Matcher matcher = pattern.matcher(inputString);
+
+
+                if (matcher.find()) {
+                    parsedString = matcher.group();
+                    break;
+                } else {
+                    System.out.println("Check entered value and repeat it again:");
+                }
+            }
+
+
+            if (parsedString.equalsIgnoreCase("CISAirlines")) {
+                System.out.println("=======" + parsedString.toUpperCase(Locale.ROOT) + "=======");
 
                 AircraftFactory factory = new CISAircraftFactory();
 
@@ -38,8 +52,8 @@ public class ApplicationRunner {
                 airline.addStandardAircraftBase(factory);
 
                 displayAirlineInfo(airline);
-            } else if(parsedString.equalsIgnoreCase("NatoAirlines")){
-                System.out.println("You have chosen>> " + parsedString);
+            } else if (parsedString.equalsIgnoreCase("NatoAirlines")) {
+                System.out.println("\n=======" + parsedString.toUpperCase(Locale.ROOT) + "=======");
 
                 AircraftFactory factory = new NATOAircraftFactory();
 
@@ -52,17 +66,17 @@ public class ApplicationRunner {
 
     }
 
-    private static void displayAirlineInfo(Airline airline){
+    private static void displayAirlineInfo(Airline airline) {
 
         System.out.println("Airline Fleet: " + airline.getBoardListSize()
-                        + "\nTotal Airline Capacity: " + airline.getTotalAirlineCapacity()
-                        + "\nTotal Airline Lifting Capacity: " + airline.getTotalAirlineLiftingCapacity()
-                        + "\nAll Available Fleet: ");
+                + "\nTotal Airline Capacity: " + airline.getTotalAirlineCapacity()
+                + "\nTotal Airline Lifting Capacity: " + airline.getTotalAirlineLiftingCapacity()
+                + "\n\nAll Available Fleet: ");
         getSortedAirlineBoards(airline);
 
     }
 
-    private static void getSortedAirlineBoards(Airline airline){
+    private static void getSortedAirlineBoards(Airline airline) {
 
         AirlineSort.sortByFlightRange(airline.getBoardList());
 
