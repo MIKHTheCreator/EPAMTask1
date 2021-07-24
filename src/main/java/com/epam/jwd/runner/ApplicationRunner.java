@@ -7,16 +7,10 @@ import com.epam.jwd.factory.CISAircraftFactory;
 import com.epam.jwd.factory.NATOAircraftFactory;
 import com.epam.jwd.validation.InputStringValidation;
 
-import java.util.Locale;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ApplicationRunner {
 
-    /*
-     * Add validation and fix some view issues
-     * */
     public static void main(String[] args) {
 
 
