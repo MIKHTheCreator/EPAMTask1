@@ -20,6 +20,12 @@ public class InputStringValidation {
 
             inputString = scan.nextLine();
 
+            if(inputString.equalsIgnoreCase("exit")){
+
+                System.out.println("Bye...");
+                System.exit(1);
+            }
+
             Pattern pattern = Pattern.compile("(((cis[\s\t]*airline)|(nato[\s\t]*airline))s*)",
                     Pattern.CASE_INSENSITIVE);
             Matcher matcher = pattern.matcher(inputString);

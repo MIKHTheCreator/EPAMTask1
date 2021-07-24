@@ -13,7 +13,8 @@ public class ApplicationRunner {
 
         try (Scanner scan = new Scanner(System.in)) {
 
-            System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines), write it below:");
+            System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines),"
+                    +" write it below(Enter exit to exit):");
 
             String parsedString = InputStringValidation.validate(scan);
             Airline airline = new Airline();
