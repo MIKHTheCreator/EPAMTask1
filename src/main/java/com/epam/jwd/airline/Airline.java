@@ -5,6 +5,7 @@ import com.epam.jwd.plane.Aircraft;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class Airline {
@@ -88,7 +89,7 @@ public class Airline {
         return totalLiftingCapacityInKilograms;
     }
 
-    public Aircraft findByParameters(float minFuelConsumption, float maxFuelConsumption){
+    public Aircraft findByParameters(float minFuelConsumption, float maxFuelConsumption) throws NoSuchElementException {
 
         Optional<Aircraft> firstSuitableAircraft =  boardList.stream()
                 .filter(aircraft -> (aircraft.getFuelConsumption() >= minFuelConsumption

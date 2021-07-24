@@ -4,6 +4,7 @@ import com.epam.jwd.airline.Airline;
 import com.epam.jwd.airline_sort.AirlineSort;
 import com.epam.jwd.validation.InputStringValidation;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ApplicationRunner {
@@ -14,12 +15,19 @@ public class ApplicationRunner {
         try (Scanner scan = new Scanner(System.in)) {
 
             System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines),"
-                    +" write it below(Enter exit to exit):");
+                    + " write it below(Enter exit to exit):");
 
-            String parsedString = InputStringValidation.validate(scan);
+            String parsedString = InputStringValidation.validateAirlineInput(scan);
             Airline airline = new Airline();
             InputStringValidation.checkStringForMatch(airline, parsedString);
             displayAirlineInfo(airline);
+
+            System.out.println("\nEnter fuel consumption parameters(min and max) to find suitable aircraft: ");
+
+            InputStringValidation.validateFuelParameters(scan, airline);
+
+        } catch (NoSuchElementException exception) {
+            System.err.println("There is no aircraft with such fuel consumption parameters!");
 
         } catch (Exception exception) {
             exception.printStackTrace();
