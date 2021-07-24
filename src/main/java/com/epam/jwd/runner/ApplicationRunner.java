@@ -5,6 +5,7 @@ import com.epam.jwd.airline_sort.AirlineSort;
 import com.epam.jwd.factory.AircraftFactory;
 import com.epam.jwd.factory.CISAircraftFactory;
 import com.epam.jwd.factory.NATOAircraftFactory;
+import com.epam.jwd.validation.InputStringValidation;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -23,45 +24,13 @@ public class ApplicationRunner {
 
             System.out.println("Choose one company you want to create(CISAirlines/NATOAirlines), write it below:");
 
-            String inputString;
-            String parsedString = "";
+            String parsedString = InputStringValidation.validate(scan);
+            Airline airline = new Airline();
+            InputStringValidation.checkStringForMatch(airline, parsedString);
+            displayAirlineInfo(airline);
 
-            while(true){
-
-                inputString = scan.nextLine();
-
-                Pattern pattern = Pattern.compile("(cisairline|natoairline)s*", Pattern.CASE_INSENSITIVE);
-                Matcher matcher = pattern.matcher(inputString);
-
-
-                if (matcher.find()) {
-                    parsedString = matcher.group();
-                    break;
-                } else {
-                    System.out.println("Check entered value and repeat it again:");
-                }
-            }
-
-
-            if (parsedString.equalsIgnoreCase("CISAirlines")) {
-                System.out.println("=======" + parsedString.toUpperCase(Locale.ROOT) + "=======");
-
-                AircraftFactory factory = new CISAircraftFactory();
-
-                Airline airline = new Airline();
-                airline.addStandardAircraftBase(factory);
-
-                displayAirlineInfo(airline);
-            } else if (parsedString.equalsIgnoreCase("NatoAirlines")) {
-                System.out.println("\n=======" + parsedString.toUpperCase(Locale.ROOT) + "=======");
-
-                AircraftFactory factory = new NATOAircraftFactory();
-
-                Airline airline = new Airline();
-                airline.addStandardAircraftBase(factory);
-
-                displayAirlineInfo(airline);
-            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
 
     }
