@@ -4,10 +4,8 @@ import com.epam.jwd.airline.Airline;
 import com.epam.jwd.factory.AircraftFactory;
 import com.epam.jwd.factory.CISAircraftFactory;
 import com.epam.jwd.factory.NATOAircraftFactory;
-import com.epam.jwd.plane.Aircraft;
 
 import java.util.Locale;
-import java.util.Optional;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -45,18 +43,11 @@ public class InputStringValidation {
 
     public static void validateFuelParameters(Scanner scan, Airline airline){
 
-        float minFuelConsumption = 0f;
-        float maxFuelConsumption = 0f;
+        float minFuelConsumption = scan.nextFloat();
+        float maxFuelConsumption = scan.nextFloat();
 
-        minFuelConsumption = scan.nextFloat();
-        maxFuelConsumption = scan.nextFloat();
 
-            if(minFuelConsumption != 0 && maxFuelConsumption != 0f){
-                System.out.println(airline.findByParameters(minFuelConsumption, maxFuelConsumption));
-
-            } else{
-                System.out.println("There is no aircraft with such fuel consumption parameters");
-            }
+        System.out.println(airline.findByParameters(minFuelConsumption, maxFuelConsumption));
 
     }
 
