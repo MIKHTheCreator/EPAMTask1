@@ -32,7 +32,6 @@ public class ApplicationRunner {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
     }
 
     private static void displayAirlineInfo(Airline airline) {
@@ -42,7 +41,6 @@ public class ApplicationRunner {
                 + "\nTotal Airline Lifting Capacity: " + airline.getTotalAirlineLiftingCapacity()
                 + "\n\nAll Available Fleet: ");
         getSortedAirlineBoards(airline);
-
     }
 
     private static void getSortedAirlineBoards(Airline airline) {

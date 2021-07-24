@@ -23,7 +23,7 @@ public class NATOAircraftFactory implements AircraftFactory {
     }
 
     @Override
-    public Aircraft createMiddleHaulCargoAircraft(){
+    public Aircraft createMiddleHaulCargoAircraft() {
         return new CargoAircraft("C-146A Wolfhound", 3450,
                 3920, 1850);
     }
@@ -36,11 +36,12 @@ public class NATOAircraftFactory implements AircraftFactory {
 
     @Override
     public Aircraft createTrainingAircraft() {
-        return new TrainingAircraft("Raytheon T-6 Texan II", 830, 1357);
+        return new TrainingAircraft("Raytheon T-6 Texan II",
+                830, 1357);
     }
 
     @Override
-    public Aircraft createRescueAircraft(){
+    public Aircraft createRescueAircraft() {
         return new DedicatedAircraft("Lockheed HC-130", 7590,
                 5800, 12100);
     }

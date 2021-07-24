@@ -12,11 +12,11 @@ import java.util.regex.Pattern;
 
 public class InputStringValidation {
 
-    public static String validate(Scanner scan){
+    public static String validate(Scanner scan) {
 
         String inputString, parsedString;
 
-        while(true){
+        while (true) {
 
             inputString = scan.nextLine();
 
@@ -35,7 +35,7 @@ public class InputStringValidation {
         return parsedString;
     }
 
-    public static void checkStringForMatch(Airline airline, String parsedString){
+    public static void checkStringForMatch(Airline airline, String parsedString) {
 
         parsedString = parsedString.replaceAll("[\s\t]+", "");
         if (parsedString.equalsIgnoreCase("CISAirlines")
