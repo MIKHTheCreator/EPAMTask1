@@ -1,7 +1,7 @@
 package com.epam.jwd.airline;
 
 import com.epam.jwd.factory.AircraftFactory;
-import com.epam.jwd.plane.Aircraft;
+import com.epam.jwd.aircraft.Aircraft;
 
 import java.util.ArrayList;
 import java.util.List;
