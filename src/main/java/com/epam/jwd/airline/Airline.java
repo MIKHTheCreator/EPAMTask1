@@ -69,24 +69,12 @@ public class Airline {
 
     public int getTotalAirlineCapacity(){
 
-        int totalNumOfSeats = 0;
-
-        for(Aircraft aircraft : boardList){
-            totalNumOfSeats += aircraft.getAircraftCapacity();
-        }
-
-        return totalNumOfSeats;
+        return this.boardList.stream().mapToInt(Aircraft::getAircraftCapacity).sum();
     }
 
     public int getTotalAirlineLiftingCapacity(){
 
-        int totalLiftingCapacityInKilograms = 0;
-
-        for(Aircraft aircraft : boardList){
-            totalLiftingCapacityInKilograms += aircraft.getLiftingCapacityInKilograms();
-        }
-
-        return totalLiftingCapacityInKilograms;
+        return (int) this.boardList.stream().mapToDouble(Aircraft::getLiftingCapacityInKilograms).sum();
     }
 
     public Aircraft findByParameters(float minFuelConsumption, float maxFuelConsumption) throws NoSuchElementException {
