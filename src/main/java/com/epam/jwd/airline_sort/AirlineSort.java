@@ -1,6 +1,6 @@
 package com.epam.jwd.airline_sort;
 
-import com.epam.jwd.plane.Aircraft;
+import com.epam.jwd.aircraft.Aircraft;
 
 import java.util.Collections;
 import java.util.Comparator;

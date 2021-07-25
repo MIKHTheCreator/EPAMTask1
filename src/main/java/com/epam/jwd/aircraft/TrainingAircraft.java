@@ -1,4 +1,4 @@
-package com.epam.jwd.plane;
+package com.epam.jwd.aircraft;
 
 public class TrainingAircraft extends Aircraft {
 

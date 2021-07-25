@@ -1,6 +1,6 @@
 package com.epam.jwd.factory;
 
-import com.epam.jwd.plane.Aircraft;
+import com.epam.jwd.aircraft.Aircraft;
 
 public interface AircraftFactory {
 
