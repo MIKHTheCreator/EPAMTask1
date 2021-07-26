@@ -79,10 +79,10 @@ public class Aircraft {
 
     @Override
     public String toString() {
-        return modelName + "(" + this.getClass().getSimpleName() + "):" +
-                "\nAircraft Capacity>> " + aircraftCapacity +
-                "\nLifting Capacity(kg)>> " + liftingCapacityInKilograms +
-                "\nFuelConsumption(kg/h)>> " + fuelConsumption +
-                "\nRange Of Flight(km)>> " + rangeOfFlightInKilometers;
+        return modelName + "(" + this.getClass().getSimpleName() + "):"
+                + "\nAircraft Capacity>> " + aircraftCapacity
+                + "\nLifting Capacity(kg)>> " + liftingCapacityInKilograms
+                + "\nFuelConsumption(kg/h)>> " + fuelConsumption
+                + "\nRange Of Flight(km)>> " + rangeOfFlightInKilometers;
     }
 }
