@@ -58,7 +58,7 @@ public class Airline {
 
         for(Aircraft aircraft : boardList){
             System.out.println(aircraft.getModelName() + "[FlightRange: " + aircraft.getRangeOfFlightInKilometers()
-                    +"km]");
+                    + "km]");
         }
     }
 

@@ -27,8 +27,7 @@ public class ApplicationRunner {
             InputStringValidation.validateFuelParameters(scan, airline);
 
         } catch (NoSuchElementException exception) {
-            System.err.println("There is no aircraft with such fuel consumption parameters or" +
-                    " your parameters are wrong!");
+            System.err.println("There is no aircraft with such fuel consumption parameters!");
 
         } catch (Exception exception) {
             exception.printStackTrace();
