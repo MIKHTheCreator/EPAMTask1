@@ -33,4 +33,10 @@ public class DedicatedAircraft extends Aircraft {
     public int hashCode() {
         return Objects.hash(super.hashCode(), getSpecialTask());
     }
+
+    @Override
+    public String toString() {
+        return super.toString()
+                + "\nSpecial aircraft task>> " + this.specialTask;
+    }
 }

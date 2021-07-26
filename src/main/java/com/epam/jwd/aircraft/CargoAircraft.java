@@ -34,4 +34,10 @@ public class CargoAircraft extends Aircraft {
     public int hashCode() {
         return Objects.hash(super.hashCode(), getTypesOfTransportedCargo());
     }
+
+    @Override
+    public String toString() {
+        return super.toString()
+                + "\nType of transported cargo>> " + this.typesOfTransportedCargo;
+    }
 }

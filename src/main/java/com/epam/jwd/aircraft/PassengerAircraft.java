@@ -33,4 +33,10 @@ public class PassengerAircraft extends Aircraft {
     public int hashCode() {
         return Objects.hash(super.hashCode(), getNumOfEmergencyExits());
     }
+
+    @Override
+    public String toString() {
+        return super.toString()
+                + "\nNumber of emergency exits>> " + this.numOfEmergencyExits;
+    }
 }
