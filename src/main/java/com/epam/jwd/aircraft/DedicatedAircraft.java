@@ -6,9 +6,9 @@ public class DedicatedAircraft extends Aircraft {
 
     private String specialTask;
 
-    public DedicatedAircraft(String modelName, float liftingCapacityInKilograms,
+    public DedicatedAircraft(String modelName, int aircraftCapacity, float liftingCapacityInKilograms,
                              float fuelConsumption, int rangeOfFlightInKilometers, String specialTask) {
-        super(modelName, 0, liftingCapacityInKilograms, fuelConsumption, rangeOfFlightInKilometers);
+        super(modelName, aircraftCapacity, liftingCapacityInKilograms, fuelConsumption, rangeOfFlightInKilometers);
         this.specialTask = specialTask;
     }
 
