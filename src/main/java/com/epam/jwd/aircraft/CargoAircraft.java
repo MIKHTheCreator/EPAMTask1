@@ -6,9 +6,9 @@ public class CargoAircraft extends Aircraft {
 
 
     private String typesOfTransportedCargo;
-    public CargoAircraft(String modelName, float liftingCapacityInKilograms,
+    public CargoAircraft(String modelName, int aircarftCapacity, float liftingCapacityInKilograms,
                          float fuelConsumption, int rangeOfFlightInKilometers, String typesOfTransportedCargo) {
-        super(modelName, 0, liftingCapacityInKilograms, fuelConsumption, rangeOfFlightInKilometers);
+        super(modelName, aircarftCapacity, liftingCapacityInKilograms, fuelConsumption, rangeOfFlightInKilometers);
         this.typesOfTransportedCargo = typesOfTransportedCargo;
     }
 
