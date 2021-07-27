@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AirlineSort {
 
-    public static List<Aircraft> sortByFlightRange(List<Aircraft> list){
+    public static List<? extends Aircraft> sortByFlightRange(List<? extends Aircraft> list){
 
         Comparator<Aircraft> comparator =
                 (Aircraft aircraft1, Aircraft aircraft2) ->
