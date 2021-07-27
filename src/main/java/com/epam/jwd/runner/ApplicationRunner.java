@@ -1,7 +1,7 @@
 package com.epam.jwd.runner;
 
 import com.epam.jwd.airline.Airline;
-import com.epam.jwd.airline_sort.AirlineSort;
+import com.epam.jwd.aircraft_sort.AircraftSort;
 import com.epam.jwd.validation.InputStringValidation;
 
 import java.util.NoSuchElementException;
@@ -46,7 +46,7 @@ public class ApplicationRunner {
 
     private static void getSortedAirlineBoards(Airline airline) {
 
-        AirlineSort.sortByFlightRange(airline.getBoardList());
+        AircraftSort.sortByFlightRange(airline.getBoardList());
 
         airline.getAirlineBoards();
     }
