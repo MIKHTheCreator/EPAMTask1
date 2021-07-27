@@ -6,8 +6,8 @@ public class TrainingAircraft extends Aircraft {
 
     private int numOfStudents;
 
-    public TrainingAircraft(String modelName, float fuelConsumption, int rangeOfFlightInKilometers, int numOfStudents) {
-        super(modelName, 0, 0, fuelConsumption, rangeOfFlightInKilometers);
+    public TrainingAircraft(String modelName, int aircraftCapacity, float fuelConsumption, int rangeOfFlightInKilometers, int numOfStudents) {
+        super(modelName, aircraftCapacity, 0, fuelConsumption, rangeOfFlightInKilometers);
         this.numOfStudents = numOfStudents;
     }
 
