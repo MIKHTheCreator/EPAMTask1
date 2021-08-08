@@ -11,8 +11,10 @@ public class TrainingAircraft extends Aircraft {
         TRAINING_AIRCRAFT_LIFTING_CAPACITY = 0;
     }
 
-    public TrainingAircraft(String modelName, int aircraftCapacity, float fuelConsumption, int rangeOfFlightInKilometers, int numOfStudents) {
-        super(modelName, aircraftCapacity, TRAINING_AIRCRAFT_LIFTING_CAPACITY, fuelConsumption, rangeOfFlightInKilometers);
+    public TrainingAircraft(String modelName, int aircraftCapacity, float fuelConsumption,
+                            int rangeOfFlightInKilometers, int numOfStudents) {
+        super(modelName, aircraftCapacity, TRAINING_AIRCRAFT_LIFTING_CAPACITY, fuelConsumption,
+                rangeOfFlightInKilometers);
         this.numOfStudents = numOfStudents;
     }
 
