@@ -4,10 +4,15 @@ import java.util.Objects;
 
 public class TrainingAircraft extends Aircraft {
 
+    private static final float TRAINING_AIRCRAFT_LIFTING_CAPACITY;
     private int numOfStudents;
 
+    static{
+        TRAINING_AIRCRAFT_LIFTING_CAPACITY = 0;
+    }
+
     public TrainingAircraft(String modelName, int aircraftCapacity, float fuelConsumption, int rangeOfFlightInKilometers, int numOfStudents) {
-        super(modelName, aircraftCapacity, 0, fuelConsumption, rangeOfFlightInKilometers);
+        super(modelName, aircraftCapacity, TRAINING_AIRCRAFT_LIFTING_CAPACITY, fuelConsumption, rangeOfFlightInKilometers);
         this.numOfStudents = numOfStudents;
     }
 

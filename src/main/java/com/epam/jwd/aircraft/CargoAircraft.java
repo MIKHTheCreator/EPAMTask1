@@ -1,7 +1,7 @@
 package com.epam.jwd.aircraft;
 
 import java.util.Objects;
-//
+
 public class CargoAircraft extends Aircraft {
 
 

@@ -1,6 +1,10 @@
 package com.epam.jwd.factory;
 
-import com.epam.jwd.aircraft.*;
+import com.epam.jwd.aircraft.Aircraft;
+import com.epam.jwd.aircraft.PassengerAircraft;
+import com.epam.jwd.aircraft.DedicatedAircraft;
+import com.epam.jwd.aircraft.CargoAircraft;
+import com.epam.jwd.aircraft.TrainingAircraft;
 
 public class NATOAircraftFactory implements AircraftFactory {
 

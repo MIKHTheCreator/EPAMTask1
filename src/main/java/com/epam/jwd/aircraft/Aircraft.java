@@ -1,8 +1,9 @@
 package com.epam.jwd.aircraft;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Aircraft {
+public class Aircraft implements Serializable {
 
     private String modelName;
     private int aircraftCapacity;
